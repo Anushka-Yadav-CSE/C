@@ -1,19 +1,21 @@
-// A program to display the area of circle by taking radius as user input.
+// A program to display the radius of a circle.
 #include <stdio.h>
-#define PI  3.14
+#include <math.h>
 int main() {
-    double radius, area;
+    double area, radius;
 
-    // Prompting the user to enter the radius.
-    printf("Enter the value of radius: ");
-    scanf("%lf", &radius);
+    // Taking input from the user.
+    printf("Enter the area of the circle: ");
+    if (scanf("%lf", &area) != 1 || area <= 0) {
+        printf("Invalid Input! Area must be a positive real number.\n");
+        return 1;
+    }
 
-    // Calculations.
-    area = PI * radius * radius;
+    // Calculation.
+    radius = sqrt((7 * area) / 22);
 
     // Printing the result.
-    printf("Radius of the circle = %.3lf\n", radius);
-    printf("Area of the circle = %.3lf\n", area);
+    printf("Radius of the circle = %.2f\n", radius);
 
     return 0;
 }
